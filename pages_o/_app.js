@@ -33,13 +33,12 @@ export default function App({ Component, pageProps }) {
         themeVariables={{
           "--w3m-font-family": "Inter",
           "--w3m-accent-color": "#F5841F",
-          "--w3m-background-color":"#18181b",
+          "--w3m-background-color": "#18181b",
           "--w3m-logo-image-url":
             "https://93vrlm-3000.csb.app/img/logo-4mobeers.svg",
         }}
         termsOfServiceUrl="https://example.com/terms-and-conditions"
-        explorerAllowList="1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369"
-      
+        // explorerAllowList="1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369"
       />
     </>
   );
