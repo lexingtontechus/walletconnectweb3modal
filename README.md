@@ -1,1 +1,1 @@
-# Wallet Connect V2 Web3Modal
+# Wallet Connect V3 Web3Modal
