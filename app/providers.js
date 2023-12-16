@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-
+import { ThemeProvider } from "next-themes";
 import {
   EthereumClient,
   w3mConnectors,
@@ -11,7 +10,7 @@ import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { mainnet, polygon } from "wagmi/chains";
 
 const chains = [mainnet, polygon];
-const projectId = "8bc78d25d0d8a616d7d8a3ddad523708";
+const projectId = process.env.projectID || "87491f051df9c49d7834ffc89cfd9dc7";
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiClient = createClient({
@@ -28,7 +27,7 @@ const Providers = ({ children }) => {
   return (
     <>
       <WagmiConfig client={wagmiClient}>
-        {children}
+        <ThemeProvider defaultTheme="dim">{children}</ThemeProvider>
         {/*<Component {...pageProps} />*/}
       </WagmiConfig>
 
@@ -36,13 +35,12 @@ const Providers = ({ children }) => {
         projectId={projectId}
         ethereumClient={ethereumClient}
         themeVariables={{
-          "--w3m-font-family": "Inter",
-          "--w3m-accent-color": "#F5841F",
-          "--w3m-background-color": "#18181b",
+          "--w3m-background-color": "#0f172a",
           "--w3m-logo-image-url":
-            "https://93vrlm-3000.csb.app/img/logo-4mobeers.svg",
+            "https://storage.fleek-internal.com/a2d41cff-44ad-49e9-a80a-2d1aafc21231-bucket/lxt-images/logo_lxt_futuristic_light.svg",
         }}
-        termsOfServiceUrl="https://example.com/terms-and-conditions"
+        termsOfServiceUrl="https://lexingtontech.us/terms"
+        privacyPolicyUrl="https://lexingtontech.us/privacy"
         // explorerAllowList="1ae92b26df02f0abca6304df07debccd18262fdf5fe82daa81593582dac9a369"
       />
     </>

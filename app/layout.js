@@ -1,21 +1,22 @@
-import { Inter } from "next/font/google";
 import Providers from "./providers";
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+import Header from "./components/header";
+import Footer from "./components/footer";
+import "/styles/global.css";
+import "/styles/index.css";
 export const metadata = {
-  title: "Home",
+  title: "Lexington WEB3 Modal Demo",
   description: "Wallet Connect WEB3 Modal",
 };
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={inter.className}>
-      <header />
-      <Providers>
-        <body>{children}</body>
-      </Providers>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
+      </body>
     </html>
   );
 }
