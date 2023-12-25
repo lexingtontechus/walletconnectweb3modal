@@ -1,1 +1,3 @@
-# Wallet Connect V2 Web3Modal
+# LEXINGTON TECH
+
+## Wallet Connect V3 Web3Modal
