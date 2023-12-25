@@ -1,18 +1,20 @@
 "use client";
 import Link from "next/link";
-import { Web3Button } from "@web3modal/react";
+import { useWeb3Modal } from "@web3modal/wagmi/react";
+
 import ContactForm from "./components/contactform";
 export default function Home() {
+  const { open } = useWeb3Modal();
   return (
     <div className="hero min-h-screen pb-8">
       <div className="hero-content text-center">
-        <div className="max-w-full">
+        <div className="max-w-2xl">
           <h1 className="text-5xl font-bold uppercase py-2">
             Lexington WEB3 Demo
           </h1>
           <h2 className="text-2xl uppercase py-2">Wallet Connect Web3Modal</h2>
-          <div className="flex flex-wrap gap-4 justify-center mx-auto">
-            <div className="text-xl py-2">
+          <div className="w-full">
+            <div className="flex flex-wrap gap-4 justify-center mx-auto text-pretty">
               <div className="card w-96 bg-base-200 shadow-xl">
                 <figure className="image-full p-2">
                   <img
@@ -29,17 +31,11 @@ export default function Home() {
                     securely connect and interact.
                   </p>
                   <div className="card-actions justify-end">
-                    <Web3Button
-                      className="btn btn-primary"
-                      icon="hide"
-                      label="CONNECT"
-                      balance="hide"
-                    />
+                    <w3m-button className="btn btn-secondary btn-block" />
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="text-xl py-2">
+
               <div className="card w-96 bg-base-200 shadow-xl">
                 <figure className="p-2">
                   <img
@@ -57,13 +53,14 @@ export default function Home() {
                   </p>
                   <div className="card-actions justify-end">
                     <button
-                      className="btn bg-sky-500 text-slate-50 font-bold text-md uppercase border-lg"
+                      className="btn btn-secondary font-bold text-md uppercase"
                       onClick={() =>
                         document.getElementById("waitlist").showModal()
                       }
                     >
                       Waitlist
                     </button>
+                    {/*--Waitlist Modal*/}
                     <dialog
                       id="waitlist"
                       className="modal modal-bottom sm:modal-middle"
@@ -72,13 +69,15 @@ export default function Home() {
                         <h3 className="font-bold text-lg uppercase">
                           Web3Inbox Waitlist
                         </h3>
-                        <div className="py-4">
+                        <div className="py-2">
                           <ContactForm />
                         </div>
                         <div className="modal-action">
                           <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
-                            <button className="btn uppercase">Close</button>
+                            <button className="btn btn-secondary uppercase">
+                              Close
+                            </button>
                           </form>
                         </div>
                       </div>
@@ -88,7 +87,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p className="pt-2 pb-8">
+          <p className="py-4">
             Wallet Connect makes it easy for you to plug into web3 through
             hundreds of apps, opening the doors to a new world of web3
             experiences.

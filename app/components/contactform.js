@@ -54,7 +54,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={state.submitting}
-          className="btn btn-secondary text-slate-50 hover:text-slate-900 font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 my-2 w-full ease-linear transition-all duration-150"
+          className="btn btn-block bg-secondary text-primary-content font-bold text-md uppercase rounded-none mt-4"
         >
           Join
         </button>

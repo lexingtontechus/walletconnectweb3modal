@@ -23,7 +23,7 @@ const ThemeChanger = () => {
         </button>
       ) : (
         <button
-          className="btn btn-sm btn-secondary mask mask-star"
+          className="btn btn-sm btn-secondary mask mask-star-2"
           onClick={() => setTheme("dim")}
         >
           <span className="sr-only">Light Mode</span>
