@@ -9,13 +9,21 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
-    "@web3modal/wagmi": "^3.5.2",
+    "@tanstack/query-core": "^5.25.0",
+    "@tanstack/react-query": "^5.25.0",
+    "@web3inbox/core": "^1.1.0",
+    "@web3inbox/react": "^1.1.0",
+    "@web3modal/siwe": "^4.0.13",
+    "@web3modal/wagmi": "^4.0.13",
+    "ethers": "^6.11.1",
     "next": "^14.0.4",
+    "next-auth": "^4.24.7",
     "next-themes": "^0.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "view": "^1.1.1",
-    "wagmi": "^1.4.12"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "siwe": "^2.1.4",
+    "viem": "^2.7.22",
+    "wagmi": "^2.5.7"
   },
   "license": "MIT",
   "keywords": [

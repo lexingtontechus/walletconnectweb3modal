@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { useWeb3Modal } from "@web3modal/wagmi/react";
+import WEB3Inbox from "./components/web3inbox";
 
 import ContactForm from "./components/contactform";
 export default function Home() {
-  const { open } = useWeb3Modal();
+  // const { open } = useWeb3Modal();
   return (
     <div className="hero min-h-screen pb-8">
       <div className="hero-content text-center">
@@ -31,7 +31,7 @@ export default function Home() {
                     securely connect and interact.
                   </p>
                   <div className="card-actions justify-end">
-                    <w3m-button className="btn btn-secondary btn-block" />
+                    <w3m-button balance="hide" />
                   </div>
                 </div>
               </div>
@@ -51,38 +51,7 @@ export default function Home() {
                     to NFT drops, social updates to game requests — get
                     real-time notifications from your favorite apps.
                   </p>
-                  <div className="card-actions justify-end">
-                    <button
-                      className="btn btn-secondary font-bold text-md uppercase"
-                      onClick={() =>
-                        document.getElementById("waitlist").showModal()
-                      }
-                    >
-                      Waitlist
-                    </button>
-                    {/*--Waitlist Modal*/}
-                    <dialog
-                      id="waitlist"
-                      className="modal modal-bottom sm:modal-middle"
-                    >
-                      <div className="modal-box">
-                        <h3 className="font-bold text-lg uppercase">
-                          Web3Inbox Waitlist
-                        </h3>
-                        <div className="py-2">
-                          <ContactForm />
-                        </div>
-                        <div className="modal-action">
-                          <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
-                            <button className="btn btn-secondary uppercase">
-                              Close
-                            </button>
-                          </form>
-                        </div>
-                      </div>
-                    </dialog>
-                  </div>
+                  <WEB3Inbox />
                 </div>
               </div>
             </div>
